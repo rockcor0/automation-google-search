@@ -40,13 +40,14 @@ public class GoogleSearchTest {
 		sBox.clear();
 		sBox.sendKeys(SEARCH);
 		sBox.submit();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
-		assertEquals(SEARCH, driver.getTitle());
+		assertEquals(SEARCH + " - Buscar con Google", driver.getTitle());
 	}
 	
 	@After
 	public void tearDown() {
+		//Close the web driver
 		driver.quit();
 	}
 	
